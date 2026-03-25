@@ -1,0 +1,62 @@
+# 🔒 Python cache & compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 🧪 Virtual environments
+venv/
+.env/
+.venv/
+env/
+ENV/
+cypher-imagetotext/
+
+# 🐍 Conda environments
+conda-meta/
+*.conda
+*.env
+
+# 📦 Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# 🧾 Logs & temp files
+*.log
+*.tmp
+*.temp
+
+# 🖥️ OS-specific files
+.DS_Store
+Thumbs.db
+
+# 🧠 IDE / Editor configs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# 📸 User files (inputs/outputs)
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.txt
+
+# ⚙️ Runtime generated files
+*.sqlite3
+*.db
+
+# 🔐 Environment variables
+.env.local
+.env.*.local
+
+# 🧪 Testing / coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# 🧵 PySide / Qt cache (if any)
+*.qrc
+*.qmlc
