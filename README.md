@@ -79,30 +79,112 @@ qtawesome>=1.2.0
 
 ## 🚀 Installation & Setup
 
-### Step 1: Clone/Download Project
+### Automatic Setup (Recommended)
+
+#### Step 1: Navigate to Project Directory
 ```bash
 cd ~/Desktop/cypher-imagetotext
 ```
 
-### Step 2: Create Virtual Environment (Optional but Recommended)
+#### Step 2: Run the Setup Script
 ```bash
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+python3 setup.py
 ```
 
-### Step 3: Install Dependencies
+You'll be presented with a menu:
+```
+Welcome to the Cypher Image to Text setup.
+Choose how you want to set up the environment:
+1) Use conda (creates environment 'cypher-imagetotext' with Python 3.10)
+2) Use venv (creates local virtual environment)
+Enter 1 or 2:
+```
+
+##### Option 1: Conda (Recommended for system-wide installation)
+- Automatically detects and installs **Miniconda** if not available
+- Creates conda environment: `cypher-imagetotext` with Python 3.10
+- Installs all dependencies via conda
+- **Activation**:
+  ```bash
+  conda activate cypher-imagetotext
+  python run.py
+  ```
+
+##### Option 2: Venv (Recommended for project-local isolation)
+- Creates local virtual environment in `venv/` directory
+- Installs all dependencies in isolated environment
+- **Activation (Linux/macOS)**:
+  ```bash
+  source venv/bin/activate
+  python run.py
+  ```
+- **Activation (Windows)**:
+  ```cmd
+  venv\Scripts\activate
+  python run.py
+  ```
+
+### Manual Setup
+
+If you prefer manual setup, follow these steps:
+
+#### Step 1: Create Virtual Environment
+```bash
+python3 -m venv venv
+source venv/bin/activate  # Linux/macOS
+# OR on Windows:
+venv\Scripts\activate
+```
+
+#### Step 2: Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-Or manually:
+Or install individually:
 ```bash
 pip install PySide6>=6.4.0 Pillow>=9.0.0 numpy>=1.21.0 qtawesome>=1.2.0
 ```
 
 ---
 
-## ▶️ Running the Application
+## 🔧 Setup Script Features (setup.py)
+
+The `setup.py` script automates environment setup with intelligent OS detection:
+
+### Supported Operating Systems
+- ✅ **Windows** (x86_64)
+- ✅ **Linux** (x86_64)
+- ✅ **macOS** (x86_64 & Apple Silicon)
+
+### What setup.py Does
+
+1. **OS Detection** - Identifies your operating system
+2. **Environment Choice** - Interactive menu to select Conda or Venv
+3. **Miniconda Auto-install** - Downloads and installs Miniconda if needed (Conda option)
+4. **Conda Environment** - Creates `cypher-imagetotext` environment with Python 3.10 (Conda option)
+5. **Dependency Installation** - Installs all requirements automatically
+6. **Activation Instructions** - Provides OS-specific activation commands
+
+### Script Workflow
+
+```
+setup.py
+├── Detect OS
+├── Create Menu (Conda vs Venv)
+├── IF Conda Selected:
+│   ├── Check if Miniconda installed
+│   ├── If not: Download & Install Miniconda
+│   ├── Create conda environment 'cypher-imagetotext'
+│   ├── Install requirements.txt via pip in conda environment
+│   └── Show activation instructions
+└── IF Venv Selected:
+    ├── Create local venv/ directory
+    ├── Install requirements.txt via pip
+    └── Show activation instructions
+```
+
+---
 
 ### Method 1: Direct Python Execution
 ```bash
@@ -165,12 +247,22 @@ cypher-imagetotext/
 ├── image_process.py       # Image loading & preprocessing
 ├── ascii_process.py       # ASCII conversion logic
 ├── osdetection.py         # OS detection utilities
+├── setup.py               # Automated environment setup
 ├── requirements.txt       # Python dependencies
 ├── README.md             # This file
 └── __pycache__/          # Python cache
 ```
 
 ### Key Files
+
+**setup.py** - Automated environment setup script
+```python
+- OS Detection        # Detects Windows, Linux, macOS
+- Conda Setup         # Auto-installs Miniconda if needed, creates environment
+- Venv Setup          # Creates local Python virtual environment
+- Dependency Install  # Automatically installs all requirements
+- Interactive Menu    # User-friendly setup choice (Conda vs Venv)
+```
 
 **ui.py** - Main UI implementation
 ```python
@@ -192,6 +284,13 @@ cypher-imagetotext/
 - CHAR_SETS{}      # Character set definitions
 - map_to_ascii()   # Convert image to ASCII art
 - get_char_set()   # Retrieve character set
+```
+
+**osdetection.py** - OS detection utilities (used by setup.py)
+```python
+- get_os()               # Returns current OS (Windows/Linux/Darwin)
+- is_conda_available()   # Checks if conda is installed
+- Auto-detection         # Environmental variable inspection
 ```
 
 ---
