@@ -6,7 +6,6 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=flat-square&logo=python)
 ![PySide6](https://img.shields.io/badge/PySide6-6.4%2B-green?style=flat-square&logo=qt)
-![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
 
 ---
 
@@ -362,11 +361,36 @@ Unknown property box-shadow
 
 ---
 
-## 📄 License
+## Licence
 
-This project is open-source and available under the MIT License.
+**Free to use. Not open source.**
 
----
+Made by **Kencypher** (Muhammad Waleed Amjad), sole author and copyright
+holder. All rights reserved.
+
+The source is readable here because this repository is public. That is not
+permission to reuse it.
+
+**You may** run it for anything including commercial work, read the source to
+learn from it, and link to this repository.
+
+**You may not**, without written permission: sell it or charge for access,
+re-upload or mirror it, publish it under another name, claim authorship, or
+copy its code into your own project and release that.
+
+This is enforced. Re-uploading this work, repackaging it, stripping the
+author's name from it or passing it off as your own is copyright infringement
+— protected without registration under the Berne Convention — and is pursued
+with DMCA takedowns, platform reports for impersonation, and legal proceedings
+where the infringement is commercial, repeated, or involves falsely claiming
+authorship.
+
+Asking first is free, and the answer is usually yes: **kencypher56@gmail.com**
+
+Any third-party components remain under their own licences, held by their own
+authors.
+
+See [LICENSE.txt](LICENSE.txt) · Everything else: <https://cypherstore.netlify.app>
 
 ## 👤 Author
 
